@@ -15,4 +15,5 @@ func ScopeRun() {
 		// fmt.Println(ScopedE) this doesn't work because ScopedE is not in the same scope
 		fmt.Printf("PI: %d\n", PI) // this should be 3.14, closest first
 	}
+	fmt.Printf("E: %d\n", E) // we can access this because the const.go file is also under ch01 pkg
 }
