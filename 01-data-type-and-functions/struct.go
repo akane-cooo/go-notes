@@ -3,7 +3,7 @@ package ch01
 import "fmt"
 
 type User struct {
-	Id            int
+	ID            int
 	Score         float64
 	Name, address string
 }
@@ -22,7 +22,7 @@ type TreeNode struct {
 
 func StructRun() {
 	var u1, u2 User
-	u1 = User{Id: 32, address: "WA", Name: "Golang"}
+	u1 = User{ID: 32, address: "WA", Name: "Golang"}
 	fmt.Println(u1.Name)
 	u2 = User{32, 34, "WA", "Golang"}
 	u2.hello()
