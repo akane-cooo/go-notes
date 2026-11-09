@@ -99,6 +99,14 @@ func Conversions() {
 	}
 
 	// float to string
+	val := 43.12591
+	s = strconv.FormatFloat(val, 'f', 2, 32) // precison, 4 bytes
+	fmt.Println(s)
+	f, err := strconv.ParseFloat(s, 64)
+	if err != nil {
+		fmt.Printf("Conversion failed: %s\n", err)
+	}
+	fmt.Println(f)
 }
 
 func StringRun() {
