@@ -56,7 +56,32 @@ func parseFormat() {
 	fmt.Printf("%+v\n", parsedT)
 }
 
+func ticker() {
+	timeFormat := "15:4:5.000"
+	tk := time.NewTicker(time.Second)
+	for range 10 {
+		<-tk.C
+		fmt.Printf("%s\n", time.Now().Format(timeFormat))
+	}
+	tk.Stop()
+}
+
+func timer() {
+	timeFormat := "15:4:5.000"
+	timer := time.NewTimer(time.Second)
+	fmt.Printf("%s\n", time.Now().Format(timeFormat))
+	<-timer.C
+	fmt.Printf("%s\n", time.Now().Format(timeFormat))
+	timer.Stop()
+
+	fmt.Printf("%s\n", time.Now().Format(timeFormat))
+	<-time.After(2 * time.Second)
+	fmt.Printf("%s\n", time.Now().Format(timeFormat))
+}
+
 func TimeRun() {
-	// basicTime()
+	basicTime()
 	parseFormat()
+	ticker()
+	timer()
 }
