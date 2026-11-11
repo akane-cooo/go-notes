@@ -37,7 +37,7 @@ func recoverBasic() {
 		}
 	}()
 	_ = data[3]
-	// the recover wont work here, because the defer has not been registered
+	// the recover wont work here,
 	// defer func() {
 	// 	// recover has to be in the defer func()
 	// 	if panicInfo := recover(); panicInfo != nil {
@@ -47,6 +47,6 @@ func recoverBasic() {
 }
 
 func PanicRun() {
-	// panicBasic()
+	panicBasic()
 	recoverBasic()
 }
