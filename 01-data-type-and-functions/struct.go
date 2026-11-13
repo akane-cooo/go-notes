@@ -12,6 +12,14 @@ func (u User) hello() {
 	fmt.Println("My name is ", u.Name)
 }
 
+func (u User) UpdateID(newID int) {
+	u.ID = newID
+}
+
+func (u *User) PtrUpdateID(newID int) {
+	u.ID = newID
+}
+
 // nested struct
 type TreeNode struct {
 	Value int
@@ -47,4 +55,12 @@ func StructRun() {
 	fmt.Printf("%v\n", u4)   // print values
 	fmt.Printf("%+v\n", u4)  // print field name and value
 	fmt.Printf("%+#v\n", u4) // print struct and field name and value
+
+	// difference between struct method and ptr struct method
+	u5 := User{ID: 345}
+	fmt.Printf("original id: %d\n", u5.ID)
+	u5.UpdateID(123)
+	fmt.Printf("struct method update id: %d\n", u5.ID)
+	u5.PtrUpdateID(789)
+	fmt.Printf("ptr method update id: %d\n", u5.ID)
 }
