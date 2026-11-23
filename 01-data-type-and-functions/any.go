@@ -44,7 +44,7 @@ func accumulateValues() {
 		Weight int
 	}{"milk", 20})
 	result := accumulate(testSlice...)
-	fmt.Printf("accumulate retulr: %d\n", result)
+	fmt.Printf("accumulate retult: %d\n", result)
 }
 
 func AnyRun() {

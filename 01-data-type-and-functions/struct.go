@@ -12,10 +12,12 @@ func (u User) hello() {
 	fmt.Println("My name is ", u.Name)
 }
 
+// the following is equal to UpdateID(u User, newID int) {}
 func (u User) UpdateID(newID int) {
 	u.ID = newID
 }
 
+// the following is equal to PtrUpdateID(u *User, newID int) {}
 func (u *User) PtrUpdateID(newID int) {
 	u.ID = newID
 }
